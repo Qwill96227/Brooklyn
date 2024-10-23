@@ -1,0 +1,180 @@
+/* src/LandingPage.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Retain full height for the page */
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Modern font */
+}
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Add padding */
+    background-color: #f0f4f8;
+    color: #333;
+    text-align: center;
+    position: relative; /* Position relative for absolute leaves */
+}
+
+
+.header {
+    margin-bottom: 30px; /* Increase margin for spacing */
+}
+
+h1 {
+    font-size: 2.5em; /* Increase font size */
+    font-weight: bold; /* Bold for emphasis */
+    color: #007bff; /* Change header color */
+}
+
+h2 {
+    font-size: 2em; /* Increase size for headings */
+    margin: 20px 0;
+}
+
+.main-content {
+    margin: 20px 0;
+    max-width: 800px; /* Limit width for readability */
+    padding: 20px; /* Add padding for spacing */
+}
+
+.why-brooklyn, .our-mission {
+    margin: 20px 0; /* Ensure sections have margin for separation */
+    /* Add any additional styling needed */
+}
+
+.get-started-button {
+    padding: 12px 24px; /* Adjust padding */
+    font-size: 18px; /* Increase font size */
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+.get-started-button:hover {
+    background-color: #0056b3;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #666; /* Lighter color for footer */
+}
+
+.leaves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent interaction with leaves */
+}
+
+.leaf {
+    position: absolute;
+    background-image: url('https://img.icons8.com/color/48/000000/leaf.png'); /* Leaf image */
+    background-size: cover;
+    width: 40px; /* Adjust size */
+    height: 40px; /* Adjust size */
+    opacity: 0.8;
+    animation: fall linear infinite; /* Apply fall animation */
+}
+
+/* Create falling leaf animation */
+@keyframes fall {
+    0% {
+        transform: translateY(-10%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh); /* Fall to the bottom */
+        opacity: 0; /* Fade out */
+    }
+}
+
+/* Add animation delay for each leaf */
+.leaf:nth-child(1) {
+    left: 10%;
+    animation-duration: 6s;
+    animation-delay: 0s;
+}
+
+.leaf:nth-child(2) {
+    left: 30%;
+    animation-duration: 7s;
+    animation-delay: 1s;
+}
+
+.leaf:nth-child(3) {
+    left: 50%;
+    animation-duration: 8s;
+    animation-delay: 2s;
+}
+
+.leaf:nth-child(4) {
+    left: 70%;
+    animation-duration: 5s;
+    animation-delay: 3s;
+}
+
+.leaf:nth-child(5) {
+    left: 90%;
+    animation-duration: 9s;
+    animation-delay: 4s;
+}
+
+
+.why-brooklyn {
+    background-color: #ffffff; /* Background color for contrast */
+    padding: 30px; /* Increase padding for spaciousness */
+    margin: 20px 0; /* Margin for spacing */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 600px; /* Limit width for readability */
+    text-align: left; /* Align text to the left */
+}
+
+.why-brooklyn h2 {
+    margin-bottom: 10px; /* Space between title and content */
+    color: #007bff; /* Color for the title */
+}
+
+.why-brooklyn p {
+    line-height: 1.6; /* Improve readability */
+    color: #444; /* Darker text for contrast */
+}
+
+/* Center specific sentence */
+.centered {
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Add space above the sentence */
+    font-weight: bold; /* Optionally bold the text */
+    font-style: italic; /* Optionally italicize the text */
+}
+
+.our-mission {
+    background-color: #f9f9f9; /* Light background for contrast */
+    padding: 30px; /* Padding for spacing */
+    margin: 20px 0; /* Margin for spacing */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 600px; /* Limit width for readability */
+    text-align: center; /* Center text */
+}
+
+.our-mission h2 {
+    margin-bottom: 10px; /* Space between title and content */
+    color: #007bff; /* Color for the title */
+}
+
+.our-mission p {
+    line-height: 1.6; /* Improve readability */
+    color: #444; /* Darker text for contrast */
+}
