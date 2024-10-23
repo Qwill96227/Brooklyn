@@ -67,26 +67,26 @@ const FallingLeaf = ({ style }) => (
   </div>
 );
 
-// Add falling animation to your CSS/Tailwind config
-const styles = `
-  @keyframes fall {
-    0% {
-      transform: translateY(-10vh) rotate(0deg);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(100vh) rotate(360deg);
-      opacity: 0;
-    }
-  }
-
-  .animate-fall {
-    animation: fall linear forwards;
-  }
-`;
-
 const LandingPage = () => {
   const [leaves, setLeaves] = useState([]);
+
+  // Define styles within the component
+  const styles = `
+    @keyframes fall {
+      0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .animate-fall {
+      animation: fall linear forwards;
+    }
+  `;
 
   useEffect(() => {
     const createLeaf = () => ({
@@ -161,18 +161,21 @@ const LandingPage = () => {
           />
         ))}
 
-        {/* Hero Section */}
-        <section className="px-6 pt-32 pb-24 text-center max-w-6xl mx-auto relative">
+        {/* Extended Hero Section */}
+        <section className="px-6 pt-40 pb-32 text-center max-w-6xl mx-auto relative">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-200/20 via-pink-200/20 to-purple-200/20 blur-3xl" />
-          <div className="relative">
-            <h1 className="text-6xl font-bold tracking-tight text-gray-800 mb-6">
+          <div className="relative space-y-12">
+            <h1 className="text-7xl font-bold tracking-tight text-gray-800 mb-8">
               Meet Brooklyn, Your Personal
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"> Well-being Guide</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto my-8">
+            <p className="text-2xl text-gray-600 max-w-3xl mx-auto">
               Experience compassionate, voice-enabled self-help guidance designed to support you throughout your day.
             </p>
-            <div className="flex justify-center gap-6 mt-12">
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              Join thousands of others who have discovered a more mindful, balanced way of living with Brooklyn's personalized support and guidance.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-6 mt-12">
               <Button size="lg" className="px-8 py-6 text-lg">
                 Try Brooklyn Now
                 <ArrowRight className="h-5 w-5 ml-2" />
@@ -180,6 +183,20 @@ const LandingPage = () => {
               <Button size="lg" variant="outline" className="px-8 py-6 text-lg">
                 Learn More
               </Button>
+            </div>
+            <div className="flex justify-center gap-8 pt-12">
+              <div className="text-center">
+                <p className="text-4xl font-bold text-purple-600">10k+</p>
+                <p className="text-gray-600">Active Users</p>
+              </div>
+              <div className="text-center">
+                <p className="text-4xl font-bold text-purple-600">24/7</p>
+                <p className="text-gray-600">Availability</p>
+              </div>
+              <div className="text-center">
+                <p className="text-4xl font-bold text-purple-600">95%</p>
+                <p className="text-gray-600">Satisfaction</p>
+              </div>
             </div>
           </div>
         </section>
